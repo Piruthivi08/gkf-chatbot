@@ -12,14 +12,17 @@ const app = express();
 connectDB();
 
 // Middleware
+app.use(cors());
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://gkf-new.onrender.com/",
+      "https://gkfweb25-create.github.io",
+      "https://your-frontend-domain.com"
     ],
     methods: "GET,POST,PUT,DELETE,OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
+    
     credentials: true,
   })
 );
