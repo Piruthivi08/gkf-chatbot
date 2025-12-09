@@ -12,7 +12,21 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://https://gkf-new.onrender.com/",
+    ],
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    allowedHeaders: "Content-Type, Authorization",
+    credentials: true,
+  })
+);
+
+// Fix preflight (OPTIONS) error
+app.options("*", cors());
+
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
