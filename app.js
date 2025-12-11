@@ -12,7 +12,6 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
 app.use(
   cors({
     origin: [
@@ -22,7 +21,7 @@ app.use(
     ],
     methods: "GET,POST,PUT,DELETE,OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
-    
+
     credentials: true,
   })
 );
