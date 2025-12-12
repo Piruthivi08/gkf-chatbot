@@ -17,7 +17,8 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://gkfweb25-create.github.io",
-      "https://your-frontend-domain.com"
+      "https://your-frontend-domain.com",
+      "https://chatbot2025gkf.onrender.com"
     ],
     methods: "GET,POST,PUT,DELETE,OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
